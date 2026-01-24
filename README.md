@@ -7,8 +7,12 @@
 
 **Saweet-Gen** adalah Generator untuk membuat project wengset, alih alih `mkdir, cp, mv, touch, echo` setiap saat, Kamu bisa memakai tools ini untuk mempersingkat waktumu.
 
-<!-- ## Filosofi
+## Filosofi
 
 ### Filosofi (ID)
 
-SawitDB dibangun dengan semangat "Kemandirian Data". Kami percaya database yang handal tidak butuh **Infrastruktur Langit** yang harganya triliunan tapi sering _down_. Berbeda dengan proyek negara yang mahal di _budget_ tapi murah di kualitas, SawitDB menggunakan arsitektur **Single File** (`.sawit`) yang hemat biaya. Backup cukup _copy-paste_, tidak perlu sewa vendor konsultan asing. Fitur **`fsync`** kami menjamin data tertulis di _disk_, karena bagi kami, integritas data adalah harga mati, bukan sekadar bahan konferensi pers untuk minta maaf. -->
+Saweet-Gen adalah manifestasi dari keinginan untuk menghapus kebosanan **_*repetitif*_** pada tahap awal pengembangan, **_*sehingga programmer bisa lebih fokus pada pemikiran kreatif dan solusi nyata.*_**
+
+### Philosophy (EN)
+
+Saweet-Gen is a manifestation of the desire to eliminate **_*repetitive*_** boredom in the early stages of development, **_*allowing programmers to focus more on creative thinking and real problem-solving.*_**
