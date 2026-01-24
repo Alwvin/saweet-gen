@@ -1,0 +1,39 @@
+package main
+
+import (
+	"fmt"
+	"os"
+	"runtime"
+	"strings"
+)
+
+var name_dir string
+
+func CheckOs(detect_os string) {
+	fmt.Println(strings.ToUpper(detect_os))
+	switch detect_os {
+	case "windows":
+		name_dir = "\\.saweet-template\\"
+	case "linux", "android":
+		name_dir = "/.saweet-template/"
+	default:
+		fmt.Println("Unknown Operating System")
+	}
+}
+
+func Init() {
+	home_dir, _ := os.UserHomeDir()
+
+	CheckOs(runtime.GOOS)
+
+	// create directory for contains template
+	err := os.Mkdir(home_dir+name_dir, 0750)
+
+	if os.IsExist(err) {
+		fmt.Println(name_dir + " is exist")
+	} else {
+		fmt.Println(name_dir + " doesn't exist")
+		fmt.Println("Successfully Created Directory " + name_dir)
+	}
+	GetTemplate("https://github.com/yorikow/template-hideng-gen/archive/refs/heads/main.zip", home_dir+name_dir)
+}
