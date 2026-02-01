@@ -5,6 +5,8 @@ import (
 	"os"
 	"runtime"
 	"strings"
+
+	"github.com/joho/godotenv"
 )
 
 var name_dir string
@@ -35,5 +37,14 @@ func Init() {
 		fmt.Println(name_dir + " doesn't exist")
 		fmt.Println("Successfully Created Directory " + name_dir)
 	}
-	GetTemplate("https://github.com/yorikow/template-hideng-gen/archive/refs/heads/main.zip", home_dir+name_dir)
+
+	get_err_env := godotenv.Load()
+	if get_err_env != nil {
+		panic("Cannot found .env file")
+	}
+
+	// for custom url
+	uri := os.Getenv("URL_TEMPLATE")
+
+	GetTemplate(uri, home_dir+name_dir)
 }
