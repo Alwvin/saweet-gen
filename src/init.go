@@ -4,15 +4,14 @@ import (
 	"fmt"
 	"os"
 	"runtime"
-	"strings"
 
+	"github.com/fatih/color"
 	"github.com/joho/godotenv"
 )
 
 var name_dir string
 
 func CheckOs(detect_os string) {
-	fmt.Println(strings.ToUpper(detect_os))
 	switch detect_os {
 	case "windows":
 		name_dir = "\\.saweet-template\\"
@@ -32,10 +31,9 @@ func Init() {
 	err := os.Mkdir(home_dir+name_dir, 0750)
 
 	if os.IsExist(err) {
-		fmt.Println(name_dir + " is exist")
+		color.Blue("Welcome to Saweet-gen")
 	} else {
-		fmt.Println(name_dir + " doesn't exist")
-		fmt.Println("Successfully Created Directory " + name_dir)
+		color.Red("Initialize")
 	}
 
 	get_err_env := godotenv.Load()
@@ -47,4 +45,5 @@ func Init() {
 	uri := os.Getenv("URL_TEMPLATE")
 
 	GetTemplate(uri, home_dir+name_dir)
+	Input()
 }

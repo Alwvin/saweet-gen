@@ -8,7 +8,11 @@ import (
 )
 
 func GetTemplate(uri string, filepath string) error {
-	out, err := os.Create(filepath + "main.zip")
+	template_name := "basic-html.zip"
+
+	// check file template is exist or not
+
+	out, err := os.Create(filepath + template_name)
 	if err != nil {
 		return err
 	}
